@@ -1,5 +1,7 @@
-import { Tabs } from "expo-router";
+import "../global.css";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { Tabs } from "expo-router";
 
 const queryClient = new QueryClient();
 
