@@ -17,12 +17,7 @@ function RootLayoutNav() {
   return (
     <NavThemeProvider value={isDark ? DarkTheme : DefaultTheme}>
       <QueryClientProvider client={queryClient}>
-        <Tabs
-          screenOptions={{
-            tabBarStyle: { height: 70 },
-            tabBarIconStyle: { flex: 1 },
-          }}
-        >
+        <Tabs>
           <Tabs.Screen
             name="index"
             options={{

@@ -1,11 +1,13 @@
-import { View, Text, Pressable, Button } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Button } from '@/components/ui/button';
+import { Text } from '@/components/ui/text';
 import { useAuthStore } from '@/stores/auth.store';
+import { useRouter } from 'expo-router';
+import { View } from 'react-native';
 
 export default function ProfileScreen() {
   const router = useRouter();
-  
   const { logout } = useAuthStore();
+
   const handleLogout = async () => {
     await logout();
     router.replace('/profile/login');
@@ -13,17 +15,30 @@ export default function ProfileScreen() {
 
   return (
     <View style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Benvenuto!</Text>
+      <Text variant={'h1'}>Benvenuto!</Text>
 
-      <Pressable onPress={() => router.push('/profile/profile-features/addresses')} style={{ padding: 15, backgroundColor: '#eee', marginBottom: 10 }}>
-        <Text>Gestisci Indirizzi</Text>
-      </Pressable>
+      <Button
+        onPress={() => router.push('/profile/profile-features/addresses')}
+        className="my-3"        
+        variant="outline"
+      >
+        <Text variant={'h3'}>Gestisci Indirizzi</Text>
+      </Button>
 
-      <Pressable onPress={() => router.push('/profile/profile-features/edit')} style={{ padding: 15, backgroundColor: '#eee' }}>
-        <Text>Modifica Dati</Text>
-      </Pressable>
+      <Button
+        onPress={() => router.push('/profile/profile-features/edit')}
+        className="mb-3"
+        variant="outline"
+      >
+        <Text variant={'h3'}>Modifica Dati</Text>
+      </Button>
 
-      <Button title="Logout" onPress={handleLogout} />
+      <Button
+        onPress={handleLogout}
+        variant="destructive"
+      >
+        <Text variant={'h3'}>Logout</Text>
+      </Button>
     </View>
   );
 }
