@@ -13,7 +13,7 @@ export default function Addresses() {
   const [selected, setSelected] = useState<Option | null>(null);
 
   return (
-    <View className="flex-1 items-center  bg-background p-6">
+    <View className="flex-1 items-center p-6">
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle>I tuoi indirizzi</CardTitle>
