@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
 import { useAuthStore } from '@/stores/auth.store';
+import * as Haptics from 'expo-haptics';
 import { useRouter } from 'expo-router';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 
 export default function ProfileScreen() {
   const router = useRouter();
@@ -12,21 +13,28 @@ export default function ProfileScreen() {
     await logout();
     router.replace('/profile/login');
   };
-
+  
+  const handleEditPress = async (): Promise<void> => {
+    if (Platform.OS !== 'web') {
+      await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+    }
+    router.push('/profile/profile-features/edit');
+  };
   return (
     <View style={{ flex: 1, padding: 20 }}>
       <Text variant={'h1'}>Benvenuto!</Text>
 
       <Button
         onPress={() => router.push('/profile/profile-features/addresses')}
-        className="my-3"        
+        className="my-3"
         variant="outline"
       >
         <Text variant={'h3'}>Gestisci Indirizzi</Text>
       </Button>
 
       <Button
-        onPress={() => router.push('/profile/profile-features/edit')}
+        
+        onPress={handleEditPress}
         className="mb-3"
         variant="outline"
       >

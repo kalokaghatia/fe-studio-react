@@ -3,7 +3,7 @@ import { Option, Select, SelectContent, SelectItem, SelectTrigger, SelectValue }
 import { useState } from 'react';
 import { View } from 'react-native';
 
-export const addresses = [
+const addresses = [
   { id: '1', label: 'Casa',      street: 'Via Roma 10',      city: 'Torino',   zip: '10121' },
   { id: '2', label: 'Ufficio',   street: 'Corso Francia 25', city: 'Torino',   zip: '10138' },
   { id: '3', label: 'Magazzino', street: 'Via Milano 80',    city: 'Collegno', zip: '10093' },

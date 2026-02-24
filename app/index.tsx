@@ -2,7 +2,7 @@ import { Text } from '@/components/ui/text';
 import { ScrollView, View } from 'react-native';
 
 export default function Home() {
-  return (<>
+  return (
     <ScrollView contentContainerClassName="p-6 native:pb-safe">
       <View className="native:pb-12 max-w-lg">
         <Text variant="h1">The Rainbow Forest Adventure</Text>
@@ -68,6 +68,5 @@ export default function Home() {
         <View className="p-3" />
       </View>
     </ScrollView>
-  </>
   );
 }

@@ -8,7 +8,7 @@ export default function ProfileFeatureLayout() {
             }}
         >
             <Stack.Screen name="addresses" options={{ title: "Indirizzo" }} />
-            <Stack.Screen name="edit" options={{ title: "Edit" }} />
+            <Stack.Screen name="edit" options={{ title: "Modifica Profilo" }} />
         </Stack>
     );
 }
